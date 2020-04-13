@@ -18,13 +18,19 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/equippement/{name?}", name="costum")
+     * @Route("/equippement/{name?}", name="custom")
+     * @param Request $request
+     * @return Response
      */
     public function equippement(Request $request)
     {
- //return $this->json(["message"=> "hello !!","another message"=>"welcome"]);
-        dump($request);
-        return $this->render('home/equippement.html.twig');
+        //return $this->json(["message"=> "hello !!","another message"=>"welcome"]);
+        $name = $request->get("name");
+        return $this->render('home/newequippement.html.twig',
+            [
+                'name'=> $name
+            ]
+        );
     }
 
 
