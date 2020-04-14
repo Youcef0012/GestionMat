@@ -3,12 +3,14 @@
 {% block body %}
     <div class="container">
         <br />
-         <h1>Nouveau équippement</h1>
+        <h1>Nouveau équippement</h1>
 
-        <form action="/CreateEquipment" method="post">
+        <form action="/main/NewEq/" method="post">
             <div class="form-group">
                 <label for="txtnumserie">Numéro de série</label>
-                <input type="text" name="numserie" class="form-control" id="numserie" placeholder="Numéro de série ">
+
+                {{ form_widget(form.serialnumber,{ 'attr': {'class': 'form-control'} }) }}
+
                 <small id="info" class="form-text text-muted">Veuillez introduire le numéro de série
                 </small>
             </div>
@@ -19,21 +21,17 @@
             </div>
             <br />
             <div class="form-group" id="cat">
-                <label for="category">Catégorie équippement</label>
-                <select class="form-control" id="category">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <label for="category">Category</label>
+                {{ form_widget(form.category,{ 'attr': {'class': 'form-control'} }) }}
+
             </div>
 
 
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" name="txtdescription" placeholder="Plus de détails sur l'équippement" id="description" rows="3"></textarea>
+                {{ form_widget(form.description,{ 'attr': {'class': 'form-control'} }) }}
+
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Résultat de votre recherche</h1>
+    <br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><b>ID</b></td>
+            <td><b>Catégorie</b></td>
+            <td><b>Date création</b></td>
+            <td><b>Serial</b></td>
+            <td><b>Description</b></td>
+
+        </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ equippement.id }}</td>
+                <td>{{ equippement.type }}</td>
+                <td>{{ equippement.createdAt |date('Y-m-d') }}</td>
+
+                <td>{{ equippement.serialnumber }}</td>
+                <td>{{ equippement.description }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

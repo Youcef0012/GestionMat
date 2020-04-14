@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53bdbd0-02f3-4f4d-a167-325ab20df879" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/newequippement.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MaterialController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Equippement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EquippementDetailsType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/EquippementRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validator/Verifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validator/VerifierValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/newequippementBuilt.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/type_equippement.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/material/categories.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/material/equippements.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/material/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/material/single_equippement.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/newequippement.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/newequippement.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,16 +153,21 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aUt5HhJzzhUFwRcU4O9nQxAu9p" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -165,12 +194,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586801815709</updated>
-      <workItem from="1586801818800" duration="7310000" />
+      <workItem from="1586801818800" duration="54610000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="411" y="122" width="824" height="684" key="#CLI_Interpreters" timestamp="1586802140424">
@@ -189,22 +221,26 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="481" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1586802829653" />
-    <state width="1354" height="205" key="GridCell.Tab.0.bottom" timestamp="1586805380508">
+    <state x="566" y="220" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586828133197">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1354" height="205" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1586805380508" />
-    <state width="1354" height="205" key="GridCell.Tab.0.center" timestamp="1586805380508">
+    <state x="566" y="220" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1533.873@67.27.1533.873" timestamp="1586828133197" />
+    <state width="1487" height="205" key="GridCell.Tab.0.bottom" timestamp="1586850529941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1354" height="205" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1586805380508" />
-    <state width="1354" height="205" key="GridCell.Tab.0.left" timestamp="1586805380507">
+    <state width="1487" height="205" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1586850529941" />
+    <state width="1487" height="205" key="GridCell.Tab.0.center" timestamp="1586850529941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1354" height="205" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1586805380507" />
-    <state width="1354" height="205" key="GridCell.Tab.0.right" timestamp="1586805380508">
+    <state width="1487" height="205" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1586850529941" />
+    <state width="1487" height="205" key="GridCell.Tab.0.left" timestamp="1586850529940">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1354" height="205" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1586805380508" />
+    <state width="1487" height="205" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1586850529940" />
+    <state width="1487" height="205" key="GridCell.Tab.0.right" timestamp="1586850529941">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1487" height="205" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1586850529941" />
     <state x="322" y="98" key="SettingsEditor" timestamp="1586802605514">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -213,5 +249,13 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="489" y="291" key="com.intellij.ide.util.TipDialog/67.27.1533.873@67.27.1533.873" timestamp="1586801820624" />
+    <state x="497" y="208" key="run.anything.popup" timestamp="1586814717975">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="497" y="208" key="run.anything.popup/67.27.1533.873@67.27.1533.873" timestamp="1586814717975" />
+    <state x="496" y="212" width="672" height="678" key="search.everywhere.popup" timestamp="1586840481750">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="496" y="212" width="672" height="678" key="search.everywhere.popup/67.27.1533.873@67.27.1533.873" timestamp="1586840481750" />
   </component>
 </project>

@@ -1,0 +1,21 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <div class="container">
+        <br />
+        <h1>Nouvelle catégorie</h1>
+
+        <form action="/material/createCategory" method="post">
+
+        <div class="form-group">
+                <label for="category">Catégorie</label>
+                <input type="text" class="form-control" name="justtest" id="category" placeholder="tel,pc...">
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}
+

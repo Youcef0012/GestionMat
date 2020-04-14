@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#checkcat').change(function () {
+                if (this.checked) {
+                    $('#cat').fadeIn('slow');
+                } else {
+                    $('#cat').fadeOut('slow');
+                }
+
+            });
+        });
+    </script>
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Gestion Matériel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8000/main/NewEq/">Nouveau matériel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8000/material/EqList">Les équippements</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8000/main/NewCat/">Nouveau type</a>
+
+            </li><li class="nav-item">
+                <a class="nav-link" href="http://localhost:8000/material/CatList">Liste des types</a>
+
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" method="GET">
+            <input class="form-control mr-sm-2" type="search"  id="seek" placeholder="chercher des équippements"
+                   aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" onclick="getInputValue()" >Chercher</button>
+        </form>
+    </div>
+</nav>
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+<script>
+    function getInputValue(){
+
+        // Selecting the input element and get its value
+
+        var inputVal = document.getElementById("seek").value;
+        window.location.replace("http:/localhost8000/http://localhost:8000/material//search/"+inputVal);
+
+
+        // Displaying the value
+
+        alert(inputVal)
+</script>
+{% endblock %}
+
+
+</body>
 </html>

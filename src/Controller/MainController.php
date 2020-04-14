@@ -2,11 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Equippement;
+use App\Form\EquippementDetailsType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/main", name="category")
+ */
 class MainController extends AbstractController
 {
     /**
@@ -17,22 +22,41 @@ class MainController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
+
     /**
-     * @Route("/equippement/{name?}", name="custom")
-     * @param Request $request
+     * @Route("/NewCat/", name="NewCat")
      * @return Response
      */
-    public function equippement(Request $request)
+    public function nouvelleCategory()
     {
-        //return $this->json(["message"=> "hello !!","another message"=>"welcome"]);
-        $name = $request->get("name");
-        return $this->render('home/newequippement.html.twig',
-            [
-                'name'=> $name
-            ]
-        );
+        return $this->render('home/type_equippement.html.twig');
     }
 
+    /**
+     * @Route("/NewEq/", name="NewEq")
+     * @param Request $request
+     * @return Response
+     * @throws \Exception
+     */
+    public function nouveauEquippement1(Request $request)
+    {
+        $equippement = new Equippement();
+        $form = $this->createForm(EquippementDetailsType::class, $equippement);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            $em = $this->getDoctrine()->getManager();
 
+            $equippement->setCreatedAt(new \DateTime('now'));
+
+
+            if ($equippement->getcategory()!=null) $equippement->setType($equippement->getcategory()->getName());
+
+            $em->persist($equippement);
+            $em->flush();
+        }
+        return $this->render('home/newequippementBuilt.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
 
 }
